@@ -1,7 +1,7 @@
 var parser = require('xml2json-light');
 
 
-function findElements(element, xml) {
+function findElements(xml) {
     var output = [];
 
     var json = parser.xml2json(xml);
@@ -28,12 +28,18 @@ function findElements(element, xml) {
 
 
 function getproductsavailable(xml){
-    console.log('procurando produtos');
 
-    var jsonReturn = findElements('',xml);
+    var jsonReturn = findElements(xml);
     return jsonReturn.response.productLoad;
+}
+function getDataInitialization(xml){
+
+    var jsonReturn = findElements(xml);
+    console.log(jsonReturn);
+    return jsonReturn.response;
 }
 
 module.exports = {
-    getproductsavailable: getproductsavailable
+    getproductsavailable: getproductsavailable,
+    getDataInitialization: getDataInitialization
 }

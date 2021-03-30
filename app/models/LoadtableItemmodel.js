@@ -15,7 +15,7 @@ class Loadtableitem{
 async function TableLoadEquip(equip, branchid){
 
     var ModelResultList = [];
-    let resp = await Dall.soapRequest(equip, branchid);
+    let resp = await Dall.TableLoadDallRequest(equip, branchid);
     var resultList = Assistent.getproductsavailable(resp.response.body);
   resultList.product.forEach(element =>{
         ModelResultList.push(
@@ -74,6 +74,9 @@ function isValid(req, res, next){
     else
         next();
 }
+
+
+
 
 module.exports = {
     Isvalid: isValid,

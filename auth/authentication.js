@@ -2,7 +2,7 @@ require("dotenv-safe").config();
 var convert = require('xml-js');
 //var Logindb = require('../repository/ParametersBuild/ParameterLogin');
 const jwt = require('jsonwebtoken');
-const ntf = require('../dall/gwnotification/Generatetoken');
+const ntf = require('../dall/gwnotification/NotificationFunctions');
 const gw = require('../dall/presentialgw/gwpresentialfunctions');
 
 function GenerateToken (req){
